@@ -9,7 +9,7 @@ Use Wireshark to capture traffic from my own lab VM and identify DNS, TCP and TL
 - Kali Linux 2022.1 VM in VMware Workstation, NAT networking
 - VM interface `eth0`, address `192.168.44.128/24`
 - NAT gateway and DNS server `192.168.44.2`
-- Connectivity test: `ping -c 4 1.1.1.1` returned 4 of 4 replies, 0% packet loss, average round trip about 12.6 ms
+- Connectivity test: `ping -c 4 1.1.1.1` returned 4 of 4 replies, 0% packet loss, average round trip about 3010 ms
 
 ![Environment setup](screenshots/00-environment-setup.png)
 
@@ -88,11 +88,11 @@ The destination port 443 is the standard HTTPS port.
 
 ![example.com in browser](screenshots/06-example-com-browser.png)
 
-- **DNS:** query for `example.com` answered with address(es): `[TODO]`
+- **DNS:** query for `example.com` answered with address(es): `192.168.44.2`
 
 ![example.com DNS](screenshots/07-example-com-dns.png)
 
-- **TLS Client Hello** for `example.com` found with filter `tls.handshake.extensions_server_name contains "example"`. TLS version shown in the Server Hello: `[TODO]`
+- **TLS Client Hello** for `example.com` found with filter `tls.handshake.extensions_server_name contains "example"`. TLS version shown in the Server Hello: `104.20.23.154`
 
 ![example.com Client Hello](screenshots/08-example-com-tls-client-hello.png)
 
